@@ -619,7 +619,9 @@ in {
 
           Service = {
             ExecStartPre = mkIf (cfg.cert != null || cfg.key != null) "+${
+                # FIXME: https://github.com/nix-community/impermanence/issues/94
                 pkgs.writers.writeBash "syncthing-copy-keys" ''
+                  ${sleep} 5
                   syncthing_dir="''${XDG_STATE_HOME:-$HOME/.local/state}/syncthing"
                   ${install} -dm700 "$syncthing_dir"
                   ${optionalString (cfg.cert != null) ''
