@@ -383,6 +383,9 @@ let
       ++ mapAttrsToList (n: v: "  ${n} ${v}") cf.extraOptions
     );
 
+  userKnownHostsFiles = [
+    "~/.ssh/known_hosts"
+  ] ++ map pkgs.copyPathToStore cfg.userKnownHostsFiles;
 in
 {
   meta.maintainers = [ lib.maintainers.rycee ];
@@ -450,13 +453,13 @@ in
       '';
     };
 
-    userKnownHostsFile = mkOption {
-      type = types.str;
-      default = "~/.ssh/known_hosts";
+    userKnownHostsFiles = mkOption {
+      type = with types; listOf path;
+      default = [ ];
       description = ''
-        Specifies one or more files to use for the user host key
-        database, separated by whitespace. The default is
-        {file}`~/.ssh/known_hosts`.
+        Specifies files to use for the user host key
+        database. The default {file}`~/.ssh/known_hosts`
+        is always included.
       '';
     };
 
@@ -603,7 +606,7 @@ in
           ServerAliveInterval ${toString cfg.serverAliveInterval}
           ServerAliveCountMax ${toString cfg.serverAliveCountMax}
           HashKnownHosts ${lib.hm.booleans.yesNo cfg.hashKnownHosts}
-          UserKnownHostsFile ${cfg.userKnownHostsFile}
+          UserKnownHostsFile ${builtins.concatStringsSep " " userKnownHostsFiles}
           ControlMaster ${cfg.controlMaster}
           ControlPath ${cfg.controlPath}
           ControlPersist ${cfg.controlPersist}
