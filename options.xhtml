@@ -2309,6 +2309,11 @@ attribute set of (submodule)</p>
 </a></code>
 </td></tr>
 <tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+<tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mbsync.nix" target="_top">
 &lt;home-manager/modules/programs/mbsync.nix&gt;
 </a></code>
@@ -4797,6 +4802,105 @@ one of “Verbatim”, “Maildir++”, “Legacy”</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mbsync.nix" target="_top">
 &lt;home-manager/modules/programs/mbsync.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-accounts.email.accounts._name_.meli.enable"></a><a class="term" href="options.xhtml#opt-accounts.email.accounts._name_.meli.enable"><code class="option">accounts.email.accounts.&lt;name&gt;.meli.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable the meli mail client for this account.
+Requires SMTP settings…</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-accounts.email.accounts._name_.meli.mailboxAliases"></a><a class="term" href="options.xhtml#opt-accounts.email.accounts._name_.meli.mailboxAliases"><code class="option">accounts.email.accounts.&lt;name&gt;.meli.mailboxAliases</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Folder display name</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (attribute set)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  INBOX = {
+    alias = &quot;📥 Inbox&quot;;
+  };
+  Sent = {
+    alias = &quot;📤 Sent&quot;;
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-accounts.email.accounts._name_.meli.mailboxes"></a><a class="term" href="options.xhtml#opt-accounts.email.accounts._name_.meli.mailboxes"><code class="option">accounts.email.accounts.&lt;name&gt;.meli.mailboxes</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Mailboxes to show in meli</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">[
+  &quot;Inbox&quot;
+  &quot;Sent&quot;
+  &quot;Trash&quot;
+  &quot;Drafts&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
+  &quot;INBOX&quot;
+  &quot;Sent&quot;
+  &quot;Trash&quot;
+  &quot;Drafts&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -8755,10 +8859,10 @@ boolean</p>
 <p>The cursor size for hyprcursor.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-null or signed integer</p>
+signed integer</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">null</code></p>
+<code class="literal">&quot;config.home.pointerCursor.size&quot;</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">32</code></p>
@@ -20238,7 +20342,7 @@ boolean</p>
 <p>The Chromium package to use.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-package</p>
+null or package</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">pkgs.chromium</code></p>
@@ -24389,6 +24493,211 @@ package</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">pkgs.fish</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix" target="_top">
+&lt;home-manager/modules/programs/fish.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.fish.binds"></a><a class="term" href="options.xhtml#opt-programs.fish.binds"><code class="option">programs.fish.binds</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Manage key bindings</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  &quot;alt-s&quot;.command = &quot;fish_commandline_prepend sudo&quot;;
+  &quot;alt-shift-b&quot;.command = &quot;fish_commandline_append bat&quot;;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix" target="_top">
+&lt;home-manager/modules/programs/fish.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.fish.binds._name_.enable"></a><a class="term" href="options.xhtml#opt-programs.fish.binds._name_.enable"><code class="option">programs.fish.binds.&lt;name&gt;.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable enable the bind.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix" target="_top">
+&lt;home-manager/modules/programs/fish.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.fish.binds._name_.command"></a><a class="term" href="options.xhtml#opt-programs.fish.binds._name_.command"><code class="option">programs.fish.binds.&lt;name&gt;.command</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>command that will be execute</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string or list of string</p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix" target="_top">
+&lt;home-manager/modules/programs/fish.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.fish.binds._name_.erase"></a><a class="term" href="options.xhtml#opt-programs.fish.binds._name_.erase"><code class="option">programs.fish.binds.&lt;name&gt;.erase</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable remove bind.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix" target="_top">
+&lt;home-manager/modules/programs/fish.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.fish.binds._name_.mode"></a><a class="term" href="options.xhtml#opt-programs.fish.binds._name_.mode"><code class="option">programs.fish.binds.&lt;name&gt;.mode</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Specify the bind mode that the bind is used in</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or one of “default”, “insert”, “paste”</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix" target="_top">
+&lt;home-manager/modules/programs/fish.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.fish.binds._name_.operate"></a><a class="term" href="options.xhtml#opt-programs.fish.binds._name_.operate"><code class="option">programs.fish.binds.&lt;name&gt;.operate</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Operate on preset bindings or user bindings</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or one of “preset”, “user”</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix" target="_top">
+&lt;home-manager/modules/programs/fish.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.fish.binds._name_.setsMode"></a><a class="term" href="options.xhtml#opt-programs.fish.binds._name_.setsMode"><code class="option">programs.fish.binds.&lt;name&gt;.setsMode</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Change current mode after bind is executed</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or one of “default”, “insert”, “paste”</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix" target="_top">
+&lt;home-manager/modules/programs/fish.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.fish.binds._name_.silent"></a><a class="term" href="options.xhtml#opt-programs.fish.binds._name_.silent"><code class="option">programs.fish.binds.&lt;name&gt;.silent</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Operate silently.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -41369,6 +41678,257 @@ TOML value</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.meli.enable"></a><a class="term" href="options.xhtml#opt-programs.meli.enable"><code class="option">programs.meli.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable meli email client.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.meli.package"></a><a class="term" href="options.xhtml#opt-programs.meli.package"><code class="option">programs.meli.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>meli package to use</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&lt;derivation meli-0.8.12&gt;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.meli.settings"></a><a class="term" href="options.xhtml#opt-programs.meli.settings"><code class="option">programs.meli.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Meli Configuration</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+TOML value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.meli.settings.shortcuts"></a><a class="term" href="options.xhtml#opt-programs.meli.settings.shortcuts"><code class="option">programs.meli.settings.shortcuts</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Shortcut Settings</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+submodule</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.meli.settings.shortcuts.composing"></a><a class="term" href="options.xhtml#opt-programs.meli.settings.shortcuts.composing"><code class="option">programs.meli.settings.shortcuts.composing</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>composing shortcut configuration</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  edit = &quot;m&quot;;
+  scroll_down = &quot;n&quot;;
+  scroll_up = &quot;e&quot;;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.meli.settings.shortcuts.contact-list"></a><a class="term" href="options.xhtml#opt-programs.meli.settings.shortcuts.contact-list"><code class="option">programs.meli.settings.shortcuts.contact-list</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>contact-list shortcut configuration</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  create_contact = &quot;c&quot;;
+  edit_contact = &quot;m&quot;;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.meli.settings.shortcuts.general"></a><a class="term" href="options.xhtml#opt-programs.meli.settings.shortcuts.general"><code class="option">programs.meli.settings.shortcuts.general</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>general shortcut configuration</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  next_page = &quot;C-d&quot;;
+  scroll_down = &quot;n&quot;;
+  scroll_up = &quot;e&quot;;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.meli.settings.shortcuts.listing"></a><a class="term" href="options.xhtml#opt-programs.meli.settings.shortcuts.listing"><code class="option">programs.meli.settings.shortcuts.listing</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>general shortcut configuration</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  new_mail = &quot;t&quot;;
+  set_seen = &quot;s&quot;;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.meli.settings.shortcuts.pager"></a><a class="term" href="options.xhtml#opt-programs.meli.settings.shortcuts.pager"><code class="option">programs.meli.settings.shortcuts.pager</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>general shortcut configuration</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  scroll_down = &quot;n&quot;;
+  scroll_up = &quot;e&quot;;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/meli.nix" target="_top">
+&lt;home-manager/modules/programs/meli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.mercurial.enable"></a><a class="term" href="options.xhtml#opt-programs.mercurial.enable"><code class="option">programs.mercurial.enable</code>
   </a>
  </span>
@@ -56220,6 +56780,357 @@ attribute set of string</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.sketchybar.enable"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.enable"><code class="option">programs.sketchybar.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable sketchybar.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.sketchybar.package"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.package"><code class="option">programs.sketchybar.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The sketchybar package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.sketchybar</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.sketchybar.config"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.config"><code class="option">programs.sketchybar.config</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The sketchybar configuration. Can be specified as:</p><div class="orderedlist"><ol class="orderedlist "  type="1"><li class="listitem"><p>A string containing the configuration content directly</p></li><li class="listitem"><p>An attribute set with ‘source’ pointing to a directory containing
+the full configuration, and optionally ‘recursive = true’ to
+recursively copy all files</p></li><li class="listitem"><p>An attribute set with ‘text’ containing inline configuration</p></li></ol></div><p>When using a string or ‘text’, the appropriate shebang will be
+automatically added based on configType (bash or lua).</p><p>When using a directory source, it should contain a file named
+“sketchybarrc” which serves as the main entry point.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or strings concatenated with “\n” or (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting"># String example - inline configuration
+&#x27;&#x27;
+# Define colors
+export COLOR_BLACK=&quot;0xff181926&quot;
+export COLOR_WHITE=&quot;0xffcad3f5&quot;
+
+# Configure bar
+sketchybar --bar height=32 \
+                position=top \
+                padding_left=10 \
+                padding_right=10 \
+                color=$COLOR_BLACK
+
+# Configure default values
+sketchybar --default icon.font=&quot;SF Pro:Bold:14.0&quot; \
+                    icon.color=$COLOR_WHITE \
+                    label.font=&quot;SF Pro:Bold:14.0&quot; \
+                    label.color=$COLOR_WHITE
+
+# Add items to the bar
+sketchybar --add item clock right \
+          --set clock script=&quot;date &#x27;+%H:%M&#x27;&quot; \
+                      update_freq=10
+
+# Update the bar
+sketchybar --update
+&#x27;&#x27;
+
+# Or directory example - for complex configurations
+# {
+#   source = ./path/to/sketchybar-config;
+#   recursive = true;
+# }
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.sketchybar.configType"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.configType"><code class="option">programs.sketchybar.configType</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The type of configuration to generate.</p><p>Set to “bash” to use the standard bash configuration.
+Set to “lua” to use the Lua configuration via SbarLua.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+one of “bash”, “lua”</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&quot;bash&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.sketchybar.extraLuaPackages"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.extraLuaPackages"><code class="option">programs.sketchybar.extraLuaPackages</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The extra Lua packages required for your plugins to work.
+This option accepts a function that takes a Lua package set as an argument,
+and selects the required Lua packages from this package set.
+See the example for more info.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+function that evaluates to a(n) list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">ps: [ ]</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">luaPkgs: with luaPkgs; [ luautf8 ]</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.sketchybar.extraPackages"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.extraPackages"><code class="option">programs.sketchybar.extraPackages</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Extra packages to add to PATH for the sketchybar service.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">[ pkgs.jq ]</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.sketchybar.includeSystemPath"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.includeSystemPath"><code class="option">programs.sketchybar.includeSystemPath</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to include common system <code class="literal">PATH</code> in the wrapper.
+This allows sketchybar to access system binaries.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.sketchybar.luaPackage"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.luaPackage"><code class="option">programs.sketchybar.luaPackage</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The lua5_4 package to use. Lua interpreter to use when configType is lua.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.lua5_4</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.sketchybar.sbarLuaPackage"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.sbarLuaPackage"><code class="option">programs.sketchybar.sbarLuaPackage</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The sbarlua package to use. Required when using a lua configuration.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.sbarlua</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.sketchybar.service.enable"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.service.enable"><code class="option">programs.sketchybar.service.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable sketchybar service.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.sketchybar.service.errorLogFile"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.service.errorLogFile"><code class="option">programs.sketchybar.service.errorLogFile</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Absolute path to log all stderr output.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or absolute path or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">${config.home.homeDirectory}/Library/Logs/sketchybar/sketchybar.err.log</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;/Users/khaneliman/Library/Logs/sketchybar.log&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.sketchybar.service.outLogFile"></a><a class="term" href="options.xhtml#opt-programs.sketchybar.service.outLogFile"><code class="option">programs.sketchybar.service.outLogFile</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Absolute path to log all stdout output.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or absolute path or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">${config.home.homeDirectory}/Library/Logs/sketchybar/sketchybar.out.log</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;/Users/khaneliman/Library/Logs/sketchybar.log&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sketchybar.nix" target="_top">
+&lt;home-manager/modules/programs/sketchybar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.skim.enable"></a><a class="term" href="options.xhtml#opt-programs.skim.enable"><code class="option">programs.skim.enable</code>
   </a>
  </span>
@@ -59381,6 +60292,30 @@ TOML value</p>
 ];
 
 </code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/superfile.nix" target="_top">
+&lt;home-manager/modules/programs/superfile.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.superfile.metadataPackage"></a><a class="term" href="options.xhtml#opt-programs.superfile.metadataPackage"><code class="option">programs.superfile.metadataPackage</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The exiftool package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.exiftool</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -80275,6 +81210,157 @@ attribute set of anything</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/jankyborders.nix" target="_top">
 &lt;home-manager/modules/services/jankyborders.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.jellyfin-mpv-shim.enable"></a><a class="term" href="options.xhtml#opt-services.jellyfin-mpv-shim.enable"><code class="option">services.jellyfin-mpv-shim.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Jellyfin mpv shim.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/jellyfin-mpv-shim.nix" target="_top">
+&lt;home-manager/modules/services/jellyfin-mpv-shim.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.jellyfin-mpv-shim.package"></a><a class="term" href="options.xhtml#opt-services.jellyfin-mpv-shim.package"><code class="option">services.jellyfin-mpv-shim.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The jellyfin-mpv-shim package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.jellyfin-mpv-shim</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/jellyfin-mpv-shim.nix" target="_top">
+&lt;home-manager/modules/services/jellyfin-mpv-shim.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.jellyfin-mpv-shim.mpvBindings"></a><a class="term" href="options.xhtml#opt-services.jellyfin-mpv-shim.mpvBindings"><code class="option">services.jellyfin-mpv-shim.mpvBindings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>mpv input bindings to use for jellyfin-mpv-shim.
+If null, jellyfin-mpv-shim will use its default input configuration.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or (attribute set of string)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+          WHEEL_UP = &quot;seek 10&quot;;
+          WHEEL_DOWN = &quot;seek -10&quot;;
+        }
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/jellyfin-mpv-shim.nix" target="_top">
+&lt;home-manager/modules/services/jellyfin-mpv-shim.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.jellyfin-mpv-shim.mpvConfig"></a><a class="term" href="options.xhtml#opt-services.jellyfin-mpv-shim.mpvConfig"><code class="option">services.jellyfin-mpv-shim.mpvConfig</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>mpv configuration options to use for jellyfin-mpv-shim.
+If null, jellyfin-mpv-shim will use its default mpv configuration.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or (attribute set of (string or signed integer or boolean or floating point number))</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+          profile = &quot;gpu-hq&quot;;
+          force-window = true;
+        }
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/jellyfin-mpv-shim.nix" target="_top">
+&lt;home-manager/modules/services/jellyfin-mpv-shim.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.jellyfin-mpv-shim.settings"></a><a class="term" href="options.xhtml#opt-services.jellyfin-mpv-shim.settings"><code class="option">services.jellyfin-mpv-shim.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/jellyfin-mpv-shim/conf.json</code>. See
+<a class="link" href="https://github.com/jellyfin/jellyfin-mpv-shim#configuration"  target="_top">https://github.com/jellyfin/jellyfin-mpv-shim#configuration</a>
+for the configuration documentation.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  allow_transcode_to_h265 = false;
+  always_transcode = false;
+  audio_output = &quot;hdmi&quot;;
+  auto_play = true;
+  fullscreen = true;
+  player_name = &quot;mpv-shim&quot;;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/jellyfin-mpv-shim.nix" target="_top">
+&lt;home-manager/modules/services/jellyfin-mpv-shim.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -101267,6 +102353,132 @@ boolean</p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix" target="_top">
+&lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-wayland.windowManager.sway.config.bindswitches"></a><a class="term" href="options.xhtml#opt-wayland.windowManager.sway.config.bindswitches"><code class="option">wayland.windowManager.sway.config.bindswitches</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Binds &lt;switch&gt; to execute the sway command command on state changes. Supported switches are lid (laptop
+lid) and tablet (tablet mode) switches. Valid values for state are on, off and toggle. These switches are
+on when the device lid is shut and when tablet mode is active respectively. toggle is also supported to run
+a command both when the switch is toggled on or off.
+See sway(5).</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&quot;No bindswitches by default&quot;</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">let
+  laptop = &quot;eDP-1&quot;;
+in
+{
+  &quot;lid:on&quot; = {
+    reload = true;
+    locked = true;
+    action = &quot;output ${laptop} disable&quot;;
+  };
+  &quot;lid:off&quot; = {
+    reload = true;
+    locked = true;
+    action = &quot;output ${laptop} enable&quot;;
+  };
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix" target="_top">
+&lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-wayland.windowManager.sway.config.bindswitches._name_.action"></a><a class="term" href="options.xhtml#opt-wayland.windowManager.sway.config.bindswitches._name_.action"><code class="option">wayland.windowManager.sway.config.bindswitches.&lt;name&gt;.action</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The sway command to execute on state changes</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix" target="_top">
+&lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-wayland.windowManager.sway.config.bindswitches._name_.locked"></a><a class="term" href="options.xhtml#opt-wayland.windowManager.sway.config.bindswitches._name_.locked"><code class="option">wayland.windowManager.sway.config.bindswitches.&lt;name&gt;.locked</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Unless the flag --locked is set, the command
+will not be run when a screen locking program
+is active. If there is a matching binding with
+and without --locked, the one with will be preferred
+when locked and the one without will be
+preferred when unlocked.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix" target="_top">
+&lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-wayland.windowManager.sway.config.bindswitches._name_.reload"></a><a class="term" href="options.xhtml#opt-wayland.windowManager.sway.config.bindswitches._name_.reload"><code class="option">wayland.windowManager.sway.config.bindswitches.&lt;name&gt;.reload</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>If the --reload flag is given, the binding will
+also be executed when the config is reloaded.
+toggle bindings will not be executed on reload.
+The --locked flag will operate as normal so if
+the config is reloaded while locked and
+–locked is not given, the binding will not be
+executed.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
